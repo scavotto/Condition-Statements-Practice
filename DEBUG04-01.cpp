@@ -1,73 +1,74 @@
-// This pseudocode should create a report that contains an  
-// apartment complex rental agent's commission. The
-// program accepts the ID number and name of the agent who
-// rented the apartment, and the number of bedrooms in the  
-// apartment. 
+// This C++ code calculates an apartment rental agent's commission
 
-#include <iostream>;
+#include <iostream>
 using namespace std;
 
-// Declarations
+// Declarations  
 int salesPersonID;
 string salesPersonName;
-
-const double numBedrooms;
+double numBedrooms;
 const double COMM_3 = 100.00;
 const double COMM_2 = 75.00;
 const double COMM_1 = 55.00;
 const double COMM_STUDIO = 30.00;
 int QUIT = 9999;
+double commissionEarned;
 
-int commisionEarned;
+int main() {
 
-int main(); {
-
-//Function Prototypes
+    // Function calls
     getReady();
 
     while (salesPersonID != QUIT) {
         detailLoop();
-            endwhile
-            finish()
-        // stop 
-        }
-             
+    }
+
+    finish();
+
+    return 0;
 }
-    void getReady() {
+
+void getReady() {
+
     cout << "Enter salesperson ID or " << QUIT << " to quit ";
     cin >> salesPersonID;
-        return
+
+    return;
+
+}
+
+void detailLoop() {
+
+    cout << "Enter name ";
+    cin >> salesPersonName;
+
+    cout << "Enter number of bedrooms rented ";
+    cin >> numBedrooms;
+
+    if (numBedrooms == 3) {
+        commissionEarned = COMM_3;
     }
-  
-    void detailLoop() {
-        cout << "Enter name ";
-        cin >> salesPersonName;
-
-        cout << "Enter number of bedrooms rented ";
-        cin >> numBedrooms;
-
-        if (numBedrooms == 3) {
-            commissionEarned = COMM_3;
-        }  
-        else if (numBedrooms == 2) {
-            commissionEarned = COMM_2;
-        }
-        else if (numBedrooms == 1) {
-            commissionEarned = COMM_1;
-        }
-        else {
-            commissionEarned = COMM_STUDIO
-        }   
-        cout << salesPersonID << salesPersonName << commissionEarned;
-
-        cout << "Enter salesperson ID or " << QUIT << " to quit ";
-        cin >> salesPersonID;
-        return
-        
-
+    else if (numBedrooms == 2) {
+        commissionEarned = COMM_2;
     }
-   
-   
-finish()
-   output "End of report"
-   return
+    else if (numBedrooms == 1) {
+        commissionEarned = COMM_1;
+    }
+    else {
+        commissionEarned = COMM_STUDIO;
+    }
+
+    cout << salesPersonID << " " << salesPersonName << " " << commissionEarned;
+
+    cout << "Enter salesperson ID or " << QUIT << " to quit ";
+    cin >> salesPersonID;
+
+    return;
+
+}
+
+void finish() {
+
+    cout << "End of report";
+
+}
