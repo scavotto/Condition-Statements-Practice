@@ -23,12 +23,15 @@ int main();
     int commisionEarned;
 
 //Function Prototypes
-    getReady()
-        while salesPersonID <> QUIT
-            detailLoop()
+    getReady();
+
+    while (salesPersonID != QUIT) {
+        detailLoop()
             endwhile
             finish()
-            // stop  
+        // stop 
+        }
+             
 
     void getReady() {
     cout << "Enter salesperson ID or " << QUIT << " to quit ";
