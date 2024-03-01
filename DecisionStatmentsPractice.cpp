@@ -24,6 +24,6 @@ int main()
     }
     else    
         cout << "Passenger is not eligible for a discount.";
-        
+
    return 0;
 } 
