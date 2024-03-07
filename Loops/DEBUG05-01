@@ -1,0 +1,14 @@
+// This program is supposed to display every fifth year
+// starting with 2024; that is, 2024, 2029, 2034, 2039,
+// and so on, for 30 years.
+start
+   Declarations
+      num year
+      num START_YEAR = 2039
+      num FACTOR = 5
+      num END_YEAR = 30
+   year = START_YEAR
+   while year <= END_YEAR
+      output year
+   endif
+stop
