@@ -10,5 +10,5 @@ start
    year = START_YEAR
    while year <= END_YEAR
       output year
-   endif
+   endwhile
 stop
