@@ -117,7 +117,6 @@ After the loop ends, we print the total number of years displayed using `std::co
 
 The `return 0;` statement indicates the successful execution of the program. It is a convention in C++ to return 0 from the `main()` function if the program runs without any errors.
 
-I hope this explanation helps you understand the purpose of each line of code in the converted program. Let me know if you have any further questions!
 
 ## 💻 Final Code
 
