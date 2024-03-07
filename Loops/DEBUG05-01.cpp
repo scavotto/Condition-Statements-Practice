@@ -1,18 +1,26 @@
 // This program is supposed to display every fifth year
 // starting with 2024; that is, 2024, 2029, 2034, 2039,
 // and so on, for 30 years.
-start
 
-   Declarations
-      num year
-      num START_YEAR = 2024
-      num FACTOR = 5
-      num NUM_YEAR = 30
+#include <iostream>
 
-    year = START_YEAR
+int main() {
+    // Declarations
+    int year;
+    const int START_YEAR = 2024;
+    const int FACTOR = 5;
+    const int NUM_YEARS = 30;
+    int counter = 0;
 
-    while year <= START_YEAR + NUM_YEARS
-        output year
-        year = year + FACTOR
-    endwhile
-stop
+    year = START_YEAR;
+
+    while (year <= START_YEAR + NUM_YEARS) {
+        std::cout << year << std::endl;
+        year = year + FACTOR;
+        counter++;
+    }
+
+    std::cout << "Total years displayed: " << counter << std::endl;
+
+    return 0;
+}
