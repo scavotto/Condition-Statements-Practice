@@ -6,9 +6,9 @@ start
       num year
       num START_YEAR = 2024
       num FACTOR = 5
-      num END_YEAR = 30
+      num NUM_YEAR = 30
    year = START_YEAR
-   while year <= END_YEAR
+   while year <= NUM_YEAR
       output year
    endwhile
 stop
