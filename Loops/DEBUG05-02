@@ -1,38 +1,64 @@
-// A standard mortgage is paid monthly over 30 years.
-// This program is intended to output 360 payment coupons
-// for each new borrower at a mortgage company.
-// Each coupon lists the month number, year number,
-// and a friendly mailing reminder.
-start
-   Declarations
-      num MONTHS = 12
-      num YEARS = 30
-      string MSG = "Remember to allow 5 days for mailing"
-      num acctNum
-      num yearCounter
-   housekeeping()
-   while acctNum <> QUIT
-      printCoupons()
-   endwhile
-   finish()
-stop
+#include <iostream>
+#include <string>
 
-housekeeping()
-   print "Enter account number or ", QUIT, " to quit "
-   input acctNum
-return
+using namespace std;
 
-printCoupons()
-   while yearCounter <= YEARS
-      while monthCounter <= MONTHS
-         print acctNum, monthCounter, yearCounter, MSG
-         monthCounter = monthCounter + 1
-      endwhile
-   endwhile
-   output "Enter account number or ", QUIT, " to quit "
-   input acctNum
-return
+const int MONTHS = 12;
+const int YEARS = 30;
+const string MSG = "Remember to allow 5 days for mailing";
+const string QUIT = "QUIT";
 
-finish()
-   output "End of job"
-return
+void housekeeping(string& acctNum);
+void printCoupons(const string& acctNum);
+void finish();
+
+int main() {
+    string acctNum;
+
+    while (true) {
+        housekeeping(acctNum);
+
+        if (acctNum == QUIT) {
+            break;
+        }
+
+        printCoupons(acctNum);
+    }
+
+    finish();
+
+    return 0;
+}
+
+void housekeeping(string& acctNum) {
+    while (true) {
+        cout << "Enter account number or " << QUIT << " to quit: ";
+        cin >> acctNum;
+
+        if (!acctNum.empty() || acctNum == QUIT) {
+            break;
+        } else {
+            cout << "Invalid account number. Please try again." << endl;
+        }
+    }
+}
+
+void printCoupons(const string& acctNum) {
+    int yearCounter = 1;
+
+    while (yearCounter <= YEARS) {
+        int monthCounter = 1;
+
+        while (monthCounter <= MONTHS) {
+            cout << "Account: " << acctNum << ", Month: " << monthCounter
+                 << ", Year: " << yearCounter << ", " << MSG << endl;
+            monthCounter++;
+        }
+
+        yearCounter++;
+    }
+}
+
+void finish() {
+    cout << "End of job" << endl;
+}
